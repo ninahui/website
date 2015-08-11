@@ -1,0 +1,183 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="" />
+<title>nina</title>
+<style>
+    *{margin:0;padding:0;}
+    body{ background: #000;}
+
+    .baymax{width:436px;height:530px;margin:70px auto 0 auto; position: relative;}
+
+    /*头部*/
+    .head{width:92px;height:60px;margin:0 auto; position: relative;z-index:999; border:solid 1px #aeb6be;
+        /*transform: rotate(9deg);-webkit-transform: rotate(9deg);*/
+        box-shadow: 1px 1px 3px #a4abb3;border-radius:50% 50% 45% 45%;
+        background:-webkit-linear-gradient(#ecf0f1 0%,#ecf0f1 50%,#cdd4db 100%);
+        background: -moz-linear-gradient(#ecf0f1 0%,#ecf0f1 50%,#cdd4db 100%);}
+    .eye{width:12px;height:12px;background: #000;border-radius:50%; position:absolute;top:21px; -webkit-animation: eyeAll 2s 0.5s ease infinite; animation: eyeAll 2s 0.5s ease infinite;}
+    .line{width:32px;height:1px;box-shadow:1px 1px 0 #000; overflow: hidden;background: #000;margin:5px 0 0 0;position:absolute;top:21px;left:30px;}
+    .head .l{left:19px;}
+    .head .r{right:19px;}
+
+    /*肚子*/
+    .fatty{width:258px;height:375px;margin:-15px auto; position: relative;}
+    .tummy{width:230px;height:170px;border-radius:110px 110px 0 0; position:absolute;z-index: 10;top:0;left:5px;
+        background:#ecf0f1;}
+    .cpu{width:30px;height:30px; border-radius:50%;position:absolute;top:60px;left:150px;box-shadow:0px 3px 1px rgba(0,0,0,0.1), 0px 3px 2px rgba(255,255,255,1) inset;}
+    .cpu span{position: absolute;}
+    .cpu span:nth-child(1){width:6px;height:1px; background: #ddd; display: block;top:15px;left:0;box-shadow:0px 0px 1px  #ddd;}
+    .cpu span:nth-child(2){width:5px;height:1px; background: #ddd; display: block;top:13px;left:6px; -webkit-transform: rotate(-30deg);transform:rotate(-30deg);box-shadow:0px 0px 1px  #ddd;}
+    .cpu span:nth-child(3){width:8px;height:1px; background: #ddd; display: block;top:11px;left:10px;box-shadow:0px 0px 1px  #ddd;}
+    .cpu span:nth-child(4){width:6px;height:1px; background: #ddd; display: block;top:13px;left:18px; -webkit-transform: rotate(30deg);transform:rotate(30deg);box-shadow:0px 0px 1px  #ddd;}
+    .cpu span:nth-child(5){width:7px;height:1px; background: #ddd; display: block;top:15px;left:23px;box-shadow:0px 0px 1px  #ddd;}
+
+    .kidney{width:253px;height:250px; position: absolute;z-index: 8;}
+    .fatty .kidney_l,.fatty .kidney_r{width:200px;height:280px;position: absolute;top:55px;border-radius:15% 30%;box-shadow:-1px 0 3px rgba(0,0,0,0.1);background: #ecf0f1;}
+    .fatty .kidney_r{right:4px; transform: rotateZ(-10deg);-webkit-transform:rotate(-10deg);border-radius: 30% 15%;}
+    .fatty .kidney_l{left:-10px;transform: rotate(10deg);-webkit-transform:rotate(10deg); }
+
+    .belly{width:280px;height:220px; z-index: 15; position:absolute;top:155px;left:-20px;border-radius:45% 50%;box-shadow:0 7px 5px #rgba(0,0,0,0.2);
+        background: -webkit-linear-gradient(#ecf0f1 0%,#ecf0f1 30%,#aeb8c1 100%);
+        background:-moz-linear-gradient(#ecf0f1 0%,#ecf0f1 30%,#aeb8c1 100%);}
+
+    /*手*/
+    .hand{ position:relative;top:-320px;}
+    .hand_l,.hand_r{ width:175px;height:340px; position: absolute;top:10px;-webkit-transform-origin: top center;transform-origin: top center; }
+    .hand_l{left:0px;-webkit-animation: hand_l 2s 1s ease infinite;animation: hand_l 2s 1s ease infinite;}
+    .hand_r{right:9px;-webkit-animation: hand_r 2s 1s ease infinite;animation: hand_r 2s 1s ease infinite;}
+
+    .hand_l_1,.hand_r_1{width:260px;height:150px; border-radius:50%; background: #e4e8e9;  position: absolute;top:0; z-index: 5;}
+    .hand_l_1{left:-9px;transform: rotate(-48deg);-webkit-transform: rotate(-48deg);}
+    .hand_r_1{right:0px;transform: rotate(48deg);-webkit-transform: rotate(48deg);}
+
+    .hand_l_2,.hand_r_2{width:100px;height:220px; border-radius:50%;position: absolute;top:55px; z-index: 6;
+              background:-webkit-linear-gradient(#e4e8e9 0%,#cbd2d8 65%,#bec7ce 75%,#a1b1bd 100%);
+              background:-moz-linear-gradient(#e4e8e9 0%,#cbd2d8 65%,#bec7ce 75%,#a1b1bd 100%);}
+    .hand_l_2{left:6px; transform: rotate(5deg);-webkit-transform: rotate(5deg);}
+    .hand_r_2{right:15px; transform: rotate(-5deg);-webkit-transform: rotate(-5deg);}
+
+    .hand_l_3,.hand_r_3{width:30px;height:80px; position: absolute;top:220px; background: #a1b1bd; border-radius:50%;}
+    .hand_l_3{left:25px;transform: rotate(-35deg);-webkit-transform: rotate(-35deg);}
+    .hand_r_3{right:35px;transform: rotate(35deg);-webkit-transform: rotate(35deg);}
+
+    .hand_l_4,.hand_r_4{width:25px;height:50px; position: absolute;top:228px;background: #a1b1bd; border-radius:50%;
+                    background:-webkit-linear-gradient(#cbd2d8 0%,#a1b1bd 100%);
+                    background:-moz-linear-gradient(#cbd2d8 0%,#a1b1bd 100%);}
+    .hand_l_4{left:50px;transform: rotate(-35deg);-webkit-transform: rotate(-35deg); }
+    .hand_r_4{right:59px; transform: rotate(35deg);-webkit-transform: rotate(35deg);}
+
+    /*脚*/
+    .foot{ position: relative;}
+    .leg_l,.leg_r{width:118px;height:180px; position: absolute;top:-80px;
+        background: -webkit-linear-gradient(#aeb8c1 40%,#ecf0f1 70%,#aeb8c1 100%);
+        background:-moz-linear-gradient(#aeb8c1 40%,#ecf0f1 70%,#aeb8c1 100%);}
+    .leg_l{left:100px;border-radius:10% 20% 18% 58%;box-shadow:2px 0 8px rgba(0,0,0,0.2) inset; }
+    .leg_r{right:100px;border-radius:20% 10% 58% 18%;}
+
+    .shadow{content: '';width: 280px; height: 50px; border-radius: 50%; background: rgba(99,99,99,0.5); position: absolute; bottom: 0px;left: 75px; z-index: -1; box-shadow: 0 0 8px 8px #333;}
+
+
+    @keyframes hand_l {
+        10%{-webkit-transform: rotate(1deg); transform: rotate(1deg);}
+        20%{-webkit-transform: rotate(-1deg); transform: rotate(-1deg);}
+        30%{-webkit-transform: rotate(1deg); transform: rotate(1deg);}
+        40%{-webkit-transform: rotate(0deg); transform: rotate(0deg);}
+    }
+    @-webkit-keyframes hand_l {
+        10%{-webkit-transform: rotate(1deg); transform: rotate(1deg);}
+        20%{-webkit-transform: rotate(-1deg); transform: rotate(-1deg);}
+        30%{-webkit-transform: rotate(1deg); transform: rotate(1deg);}
+        40%{-webkit-transform: rotate(0deg); transform: rotate(0deg);}
+    }
+
+    @keyframes hand_r{
+        10%{-webkit-transform:rotateZ(1deg); transform:rotateZ(1deg);}
+        20%{-webkit-transform:rotateZ(-1deg); transform:rotateZ(-1deg); }
+        30%{-webkit-transform:rotateZ(1deg); transform:rotateZ(1deg); }
+        40%{-webkit-transform:rotateZ(0deg); transform:rotateZ(0deg); }
+    }
+    @-webkit-keyframes hand_r{
+        10%{-webkit-transform:rotateZ(-1deg); transform:rotateZ(-1deg);}
+        20%{-webkit-transform:rotateZ(1deg); transform:rotateZ(1deg); }
+        30%{-webkit-transform:rotateZ(-1deg); transform:rotateZ(-1deg); }
+        40%{-webkit-transform:rotateZ(0deg); transform:rotateZ(0deg); }
+    }
+
+    @keyframes eyeAll {
+         0%,20%,100%{-webkit-transform: rotateX(0deg);transform: rotateX(0deg);}
+         10%{-webkit-transform: rotateX(90deg);transform: rotateX(90deg);}
+    }
+
+    @-webkit-keyframes eyeAll {
+        0%,20%,100%{-webkit-transform: rotateX(0deg);transform: rotateX(0deg);}
+        10%{-webkit-transform: rotateX(90deg);transform: rotateX(90deg);}
+    }
+
+
+</style>
+<script>
+
+</script>
+</head>
+
+<body>
+
+<div class="baymax">
+    <!--头-->
+    <div class="head">
+        <div class="line"></div>
+        <div class="eye l"></div>
+        <div class="eye r"></div>
+    </div>
+
+    <!--肚子-->
+    <div class="fatty">
+        <div class="tummy">
+            <div class="cpu">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <div class="kidney">
+            <div class="kidney_l"></div>
+            <div class="kidney_r"></div>
+        </div>
+        <div class="belly"></div>
+    </div>
+
+    <!--手-->
+    <div class="hand">
+        <div class="hand_l">
+            <div class="hand_l_1"></div>
+            <div class="hand_l_2"></div>
+            <div class="hand_l_3"></div>
+            <div class="hand_l_4"></div>
+        </div>
+        <div class="hand_r">
+            <div class="hand_r_1"></div>
+            <div class="hand_r_2"></div>
+            <div class="hand_r_3"></div>
+            <div class="hand_r_4"></div>
+        </div>
+    </div>
+
+    <!--脚-->
+    <div class="foot">
+        <div class="leg_l"></div>
+        <div class="leg_r"></div>
+    </div>
+
+    <!--阴影-->
+    <div class="shadow"></div>
+
+
+
+
+</div>
+</body>
+</html>
