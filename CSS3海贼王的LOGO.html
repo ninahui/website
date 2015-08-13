@@ -1,0 +1,137 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="" />
+<title>CSS3海贼王LOGO</title>
+<meta name="description" content="CSS3海贼王LOGO;author：nina;" />
+<style>
+    *{margin:0;padding:0;}
+    body{background: #000;}
+
+    .wrapper{width:600px;margin:100px auto;paddng-top:30px;}
+
+    /*骨头*/
+    .bone{ position: relative;width:100%;height:100%;top:-30px;}
+    .boneX,.boneY{width:46px;height:614px; background: #7f8180; position: absolute;top:-46px;margin-left:-23px;}
+    .boneX{left:57%;-webkit-transform: rotate(48deg);}
+    .boneY{left:43%;-webkit-transform: rotate(-48deg);}
+    .boneX span:nth-child(1),.boneX span:nth-child(2),.boneX span:nth-child(3),.boneX span:nth-child(4),
+    .boneY span:nth-child(1),.boneY span:nth-child(2),.boneY span:nth-child(3),.boneY span:nth-child(4)
+        {width:62px;height:62px; display: block;background: #7f8180;border-radius:50%; position: absolute;}
+    .boneX span:nth-child(1),.boneY span:nth-child(1){top:-12px;left:-32px;}
+    .boneX span:nth-child(2),.boneY span:nth-child(2){top:-12px;right:-32px;}
+    .boneX span:nth-child(3),.boneY span:nth-child(3){bottom:-25px;left:-32px;}
+    .boneX span:nth-child(4),.boneY span:nth-child(4){bottom:-25px;right:-32px;}
+
+
+    /*头部*/
+    .header{width:320px;height:320px;margin:0 auto;background:#7f7f7f;border-radius:50%;border:solid 8px #000; position: relative; z-index: 999;}
+
+        /*帽子*/
+        .cap{width:320px;height:160px;background:#826710;border-top-left-radius:190px;border-top-right-radius:190px; overflow: hidden; position: relative;}
+        .redArea{width:100%;height:42px; background: #80010a; position: absolute;top:106px;left:0;border-top:solid 7px #000;}
+
+        .yellow_line{width:500px;height:18px;border-radius:20px;background:#826613;border:solid 7px #000; position: absolute;top:146px;left:-90px;}
+
+        /*wifi*/
+        .wifi_l{width:9px;height:25px;border-radius:10px; background:#000;position:absolute;top:70px;}
+        .wifi_l{left:80px; transform:rotate(25deg);}
+
+        .wifi_r,.wifi_r:after{/*border-right:solid 9px #000;border-bottom:solid 9px #000;border-bottom-right-radius:100%;*/width:8px; position:absolute;background:#000;border-radius:10px;position:absolute;}
+        .wifi_r{height:20px;top:75px;right:80px;-webkit-transform:rotate(-25deg);}
+        .wifi_r:after{content:'';height:35px;top:-3px;right:-25px;transform:rotate(-5deg);}
+
+
+        .wifi_l:after,.wifi_l:before{content:'';width:8px;border-radius:10px; background:#000;position:absolute;top:0px;}
+        .wifi_l:after{height:15px;left:20px; transform:rotate(0deg);}
+        .wifi_l:before{height:35px;left:-22px; transform:rotate(5deg);}
+
+
+        /*眼睛*/
+        .eye{width:100%;height:100%;}
+        .eye_l,.eye_r{width:85px;height:85px;border-radius:50%; background: #000; position: absolute;top:185px;}
+        .eye_l{left:57px;}
+        .eye_r{right:57px;}
+        .mouth{width:36px;height:26px; background: #000;border-radius:50%; position: absolute;bottom:18px;left:50%;margin-left:-18px;}
+
+
+    /*身体*/
+    .body{width:210px;height:210px;margin:0 auto; position:relative;top:-60px; z-index:99;border-radius:45%; background: #808080;border:solid 8px #000; overflow: hidden;}
+    .lineX,.lineX:after{width:400px;height:200px;border-bottom:solid 8px #000;border-left:solid 8px #000;border-right:solid 8px #000; border-bottom-left-radius:200px; border-bottom-right-radius:200px; position: absolute;}
+    .lineX{top:-120px;left:-100px;}
+    .lineX:after{content:'';top:33px;left:0px;-webkit-transform: rotate(-5deg);}
+
+    .lineY,.lineY:before,.lineY:after{width:8px;height:75px;background: #000; position: absolute;}
+    .lineY{top:36px;left:50px;-webkit-transform: rotate(15deg);}
+    .lineY:before{content:'';top:-10px;left:52px;-webkit-transform: rotate(-15deg);}
+    .lineY:after{content:'';top:-28px;left:100px;-webkit-transform: rotate(-30deg);}
+
+
+
+
+
+
+
+
+
+</style>
+<script>
+
+</script>
+</head>
+
+<body>
+
+<div class="wrapper">
+
+    <!--骨头-->
+    <div class="bone">
+        <div class="boneX">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="boneY">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+
+    <!--头-->
+    <div class="header">
+
+        <!--帽子-->
+        <div class="cap">
+            <div class="wifi_l"></div>
+            <div class="wifi_r"></div>
+            <div class="redArea"></div>
+        </div>
+
+        <!--帽子黄线-->
+        <div class="yellow_line"></div>
+
+        <!--眼睛-->
+        <div class="eye">
+            <div class="eye_l"></div>
+            <div class="eye_r"></div>
+            <div class="mouth"></div>
+        </div>
+    </div>
+
+    <!--身体-->
+    <div class="body">
+        <div class="lineX"></div>
+        <div class="lineY"></div>
+    </div>
+
+
+</div>
+
+
+
+</body>
+</html>
