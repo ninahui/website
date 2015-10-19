@@ -1,0 +1,299 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="" />
+<title>叮当猫</title>
+    <style>
+        *{margin:0;padding:0;}
+        body{text-align: center;background: #282828;}
+    </style>
+<script>
+window.onload = function(){
+    var canvas = document.getElementById('myCanvas');
+        canvas.width = 580;
+        canvas.height = 600;
+
+    var context = canvas.getContext('2d');
+        context.lineWidth = 3;
+
+        //鼻子——红点
+        context.beginPath();
+        context.arc(325,50,20,0,2*Math.PI);
+        context.fillStyle = '#df012a';
+        context.fill();
+        context.stroke();
+        //鼻子——红点——白点
+        context.beginPath();
+        context.arc(325,40,6,0,2*Math.PI);
+        context.fillStyle = '#fff';
+        context.fill();
+
+        //左腿
+        context.beginPath();
+        context.fillStyle = '#00a0e8';
+        context.moveTo(150,440);
+        context.lineTo(188,472);
+        context.lineTo(195,498);
+        context.quadraticCurveTo(177,553,121,533);
+        context.lineTo(98,477);
+        context.lineTo(150,440);
+        context.fill();
+        context.stroke();
+
+        //身体大体框架——蓝色
+        context.beginPath();
+        context.fillStyle = '#00a0e8';
+        context.moveTo(85,47);
+        context.bezierCurveTo(0,98,15,267,73,306);
+        context.bezierCurveTo(126,339,125,334,118,361);
+        context.bezierCurveTo(112,388,78,456,145,477);
+        context.bezierCurveTo(213,496,215,533,215,533);
+        context.bezierCurveTo(215,533,344,533,344,533);
+        context.bezierCurveTo(340,476,325,453,325,453);
+        context.bezierCurveTo(342,403,339,367,339,367);
+        context.quadraticCurveTo(343,331,329,282);
+        context.bezierCurveTo(387,178,355,112,355,112);
+        context.bezierCurveTo(332,66,300,48,300,48);
+        context.bezierCurveTo(300,46,180,-30,85,47);
+        context.fill();
+        context.stroke();
+
+        //脸——白色
+        context.beginPath();
+        context.fillStyle = '#fff';
+        context.moveTo(299,47);
+        context.bezierCurveTo(354,88,359,126,362,132);
+        context.quadraticCurveTo(373,112,387,123);
+        context.bezierCurveTo(401,134,409,155,398,173);
+        context.bezierCurveTo(387,191,371,196,365,196);
+        context.quadraticCurveTo(353,259,328,282);
+        context.quadraticCurveTo(258,288,222,293);
+        context.quadraticCurveTo(149,230,162,154);
+        context.bezierCurveTo(176,79,248,57,248,57);
+        context.quadraticCurveTo(299,46,299,46);
+        context.fill();
+        context.stroke();
+
+        //眼睛
+        context.beginPath();
+        context.fillStyle = '#fff';
+        context.moveTo(214,16);
+        context.quadraticCurveTo(259,19,300,47);
+        context.bezierCurveTo(300,47,317,60,304,50);
+        context.quadraticCurveTo(304,65,283,69);
+        context.bezierCurveTo(244,70,216,43,211,31);
+        context.quadraticCurveTo(207,20,214,16);
+        context.fill();
+        context.stroke();
+
+		//云朵
+		context.beginPath();
+		context.moveTo(457,150);
+		context.quadraticCurveTo(457,150,420,166);
+		context.quadraticCurveTo(419,166,446,162);		
+		context.quadraticCurveTo(445,162,412,176);		
+		context.quadraticCurveTo(411,176,460,162);		
+		context.quadraticCurveTo(462,162,431,178);				
+		context.quadraticCurveTo(430,178,471,168);
+		context.stroke();
+		
+		context.beginPath();
+		context.moveTo(504,99);
+		context.quadraticCurveTo(469,70,446,104,426,134);
+		context.quadraticCurveTo(426,134,460,153);
+		context.stroke();
+		
+		context.beginPath();
+		context.moveTo(556,132);
+		context.quadraticCurveTo(570,100,543,84,517,70);
+		context.quadraticCurveTo(517,70,499,95);
+		context.stroke();
+		
+		context.beginPath();
+		context.moveTo(548,127);
+		context.quadraticCurveTo(571,133,562,157,555,176);
+		context.quadraticCurveTo(555,176,534,172);
+		context.stroke();
+		
+		context.beginPath();
+		context.moveTo(538,173);
+		context.quadraticCurveTo(537,202,505,205,478,207);
+		context.quadraticCurveTo(467,207,468,170);
+		context.stroke();
+
+
+        //右角
+        context.beginPath();
+        context.fillStyle = '#fff';
+        context.moveTo(267,500);
+        context.bezierCurveTo(250,505,215,519,213,537);
+        context.bezierCurveTo(204,597,341,610,375,555);
+        context.bezierCurveTo(378,552,384,522,358,508);
+        context.quadraticCurveTo(321,486,267,500);
+        context.fill();
+        context.stroke();
+
+        //左角
+        context.beginPath();
+        context.fillStyle = '#fff';
+        context.moveTo(87,422);
+        context.bezierCurveTo(87,422,102,415,104,428);
+        context.bezierCurveTo(106,440,120,481,123,510);
+        context.bezierCurveTo(125,539,115,569,87,572);
+        context.bezierCurveTo(59,576,31,541,49,452);
+        context.quadraticCurveTo(56,430,87,422);
+        context.fill();
+        context.stroke();
+        //尾巴
+        context.beginPath();
+        context.moveTo(96,436);
+        context.quadraticCurveTo(89,442,106,436);
+        context.stroke();
+
+        context.beginPath();
+        context.arc(77,437,20,0,2*Math.PI);
+        context.fillStyle = '#db052b';
+        context.fill();
+        context.stroke();
+
+    //头部——线条
+        //眼睛
+        context.beginPath();
+        context.strokeStyle = '#000'
+        context.moveTo(252,27);
+        context.lineTo(285,50);
+        context.stroke();
+
+        context.beginPath();
+        context.strokeStyle = '#000'
+        context.moveTo(273,33);
+        context.lineTo(260,46);
+        context.stroke();
+
+        //胡子
+        context.beginPath();
+        context.strokeStyle = '#000';
+        context.moveTo(187,83);
+        context.lineTo(281,104);
+        context.stroke();
+
+        context.beginPath();
+        context.strokeStyle = '#000';
+        context.moveTo(182,137);
+        context.lineTo(284,127);
+        context.stroke();
+
+        context.beginPath();
+        context.strokeStyle = '#000';
+        context.moveTo(202,190);
+        context.lineTo(288,144);
+        context.stroke();
+
+        //嘴
+        context.beginPath();
+        context.moveTo(204,222);
+        context.bezierCurveTo(204,222,217,199,238,199);
+        context.bezierCurveTo(257,197,262,206,273,204);
+        context.bezierCurveTo(284,203,305,185,323,185);
+        context.bezierCurveTo(342,185,353,195,364,196);
+        context.stroke();
+
+    //口袋
+        context.beginPath();
+        context.fillStyle = '#fff';
+        context.moveTo(277,295);
+        context.quadraticCurveTo(291,289,329,287);
+        context.bezierCurveTo(329,287,339,316,339,360);
+        context.quadraticCurveTo(338,405,326,453);
+        context.bezierCurveTo(292,443,258,430,246,376);
+        context.quadraticCurveTo(236,324,277,295);
+        context.fill();
+        context.stroke();
+
+        context.beginPath();
+        context.fillStyle = '#fff';
+        context.moveTo(281,352);
+        context.bezierCurveTo(331,363,342,365,342,375);
+        context.quadraticCurveTo(341,390,332,428);
+        context.quadraticCurveTo(261,412,281,352);
+        context.fill();
+        context.stroke();
+
+    //围巾
+        context.beginPath();
+        context.fillStyle = '#e1002a';
+        context.moveTo(113,330);
+        context.quadraticCurveTo(160,301,226,287);
+        context.quadraticCurveTo(292,275,328,280);
+        context.bezierCurveTo(328,280,333,286,331,294);
+        context.quadraticCurveTo(220,289,121,345);
+        context.quadraticCurveTo(109,343,113,330);
+        context.fill();
+        context.stroke();
+
+    //手
+        context.beginPath();
+        context.moveTo(237,326);
+        context.quadraticCurveTo(234,377,206,412);
+        context.quadraticCurveTo(206,412,166,400);
+        context.quadraticCurveTo(157,364,167,328);
+        context.stroke();
+
+        context.beginPath();
+        context.fillStyle = '#fff';
+        context.arc(188,418,31,0,2*Math.PI);
+        context.fill();
+        context.stroke();
+
+    //铃铛
+        context.beginPath();
+        context.fillStyle = '#ffe43b';
+        context.arc(342,311,26,0,2*Math.PI);
+        context.fill();
+        context.stroke();
+
+        context.beginPath();
+        context.fillStyle = '#ffe43b';
+        context.moveTo(316,316);
+        context.quadraticCurveTo(330,289,360,289);
+        context.quadraticCurveTo(369,295,363,298);
+        context.quadraticCurveTo(339,299,321,325);
+        context.quadraticCurveTo(312,326,316,316);
+        context.fill();
+        context.stroke();
+
+        context.beginPath();
+        context.fillStyle  = '#7f6c5b';
+        context.moveTo(366,303);
+        context.quadraticCurveTo(366,303,367,315);
+        context.bezierCurveTo(359,317,353,306,366,303);
+        context.fill();
+        context.stroke();
+
+
+        //腿之间的线
+        context.beginPath();
+        context.lineWidth = 0;
+        context.fillStyle = '#00a0e8';
+        context.strokeStyle = '#00a0e8';
+        context.moveTo(136,468);
+        context.lineTo(167,468);
+        context.lineTo(156,489);
+        context.lineTo(131,484);
+        context.fill();
+        context.closePath();
+        context.stroke();
+
+}
+
+</script>
+</head>
+
+<body>
+<canvas id="myCanvas" style="margin:100px 0 0 0;opacity:1;background: #fff;">叮当猫</canvas>
+
+
+
+</body>
+</html>
