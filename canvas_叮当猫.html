@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="author" content="" />
-<title>叮当猫</title>
+<title>nina_叮当猫</title>
     <style>
         *{margin:0;padding:0;}
         body{text-align: center;background: #282828;}
@@ -13,10 +13,8 @@ window.onload = function(){
     var canvas = document.getElementById('myCanvas');
         canvas.width = 580;
         canvas.height = 600;
-
     var context = canvas.getContext('2d');
         context.lineWidth = 3;
-
         //鼻子——红点
         context.beginPath();
         context.arc(325,50,20,0,2*Math.PI);
@@ -284,16 +282,11 @@ window.onload = function(){
         context.fill();
         context.closePath();
         context.stroke();
-
 }
 
 </script>
 </head>
-
 <body>
 <canvas id="myCanvas" style="margin:100px 0 0 0;opacity:1;background: #fff;">叮当猫</canvas>
-
-
-
 </body>
 </html>
